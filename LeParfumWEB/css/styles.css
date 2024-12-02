@@ -1,0 +1,280 @@
+/*Indice de Navegación*/
+.navbar {
+    background-color: #f8f3f0;  
+}
+
+.navbar-nav .nav-link {
+    color: #000;  
+}
+
+.navbar-nav .nav-link:hover, .navbar-nav .nav-link:focus {
+    color: #fff;  
+    background-color: #ffaaad;  
+}
+
+
+
+/* Header */
+header {
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: #fff;
+    padding: 100px 0;
+}
+
+.header-content {
+    background-color: rgba(88, 69, 78, 0.6);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.btn {
+    font-size: 18px;
+    margin-top: 20px;
+    background-color: #f8f3f0;
+    color: #333;
+    transition: background-color 0.3s, color 0.3s;
+    outline: none;
+
+}
+
+.btn:hover {
+    background-color: #ffaaad;
+    color: #666;
+}
+
+/*Categorías index*/
+
+#categorias {
+    margin: 3em 0;
+}
+
+#categorias a {
+    text-decoration: none;
+    color: #333;
+}
+
+#categorias a:hover {
+    font-weight: bold;
+}
+
+/*Sobre Nosotros*/
+
+#sobre-nosotros h2 {
+    text-align: center;
+    margin-top: 1em;
+}
+
+.btn-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffaaad;
+    color: #333;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.btn-link:hover {
+    font-weight: bold;
+    font-size: 1rem;
+    color: #333;
+}
+
+
+/*Productos*/
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.card .btn {
+    margin-right: 10px;
+}
+
+.card .fa-heart {
+    color: #ffaaad;
+    font-size: 1.5rem;
+    margin-top: 1em;
+}
+
+.card .fa-heart:hover {
+    color: #ff0000;
+}
+
+/* Estilo para las tarjetas de producto */
+.card {
+    width: 18rem;
+    margin: 0 10px;
+    /* Margen en todos los lados: arriba, derecha, abajo, izquierda */
+    padding: 0px;
+}
+
+.card-footer {
+    background-color: #fff;
+}
+
+.btn-comprar {
+    width: 100%;
+}
+
+.card-text {
+    max-height: 100px;
+    overflow-y: auto;
+}
+
+.d-flex.align-items-center {
+    justify-content: space-between;
+}
+
+
+/* Estilos para la sección de publicidad */
+#publicidad {
+    background-image: url('/img/cupon.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 2em 0;
+    padding: 50px 0;
+    text-align: right;
+}
+
+.publicidad-content h2 {
+    font-size: 2em;
+    text-transform: uppercase;
+    color: white;
+}
+
+.publicidad-content span {
+    font-size: 3em;
+    text-transform: uppercase;
+    color: white;
+    margin-right: 2em;
+    font-weight: bold;
+}
+
+.publicidad-content p {
+    font-size: 1.5em;
+    text-transform: uppercase;
+    color: white;
+    margin-right: 10px;
+}
+
+.codigo-descuento {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.codigo-borde {
+    border: 1px solid #ffaaad;
+    background-color: #ffaaad;
+    padding: 5px 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#codigo {
+    font-weight: bold;
+    color: #802648;
+    display: inline-block;
+}
+
+/* Ventajas */
+#ventajas {
+    padding: 50px 0;
+}
+
+#ventajas h2 {
+    margin-bottom: 2em;
+}
+
+#ventajas .col-md-4 {
+    text-align: center;
+}
+
+#ventajas i {
+    font-size: 3em;
+    color: #333;
+}
+
+#ventajas p {
+    margin-top: 1em;
+}
+
+/*suscripción */
+#suscribir {
+    background-image: url('/img/suscribir.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 50px 0;
+    text-align: center;
+    color: #333;
+}
+
+/*  footer */
+footer {
+    background-color: #ffaaad;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 2em;
+}
+
+/* Productos */
+
+/*header*/
+
+/*aside */
+.sidebar a {
+    color: #333;
+    transition: color 0.3s;
+}
+
+.sidebar .fa-chevron-right {
+    color: #333;
+}
+
+.sidebar a:hover {
+    color: #ffaaad;
+}
+
+.nav-link:focus,
+.nav-link:hover {
+    color: #ffaaad;
+}
+
+.sidebar h3 {
+    font-size: 1rem;
+    margin-top: 2em;
+}
+
+/* Main */
+#ordenarPor {
+    width: 30%;
+
+    margin-right: 10px;
+    border: 1px solid #ffaaad;
+}
+
+#ordenarPor:hover {
+    border: 1px solid #ffaaad;
+}
+
+/*Contacto*/
+
+
+.descripcion-fija {
+    max-width: 200px; /* Ajusta el ancho según tus necesidades */
+    max-height: 100px; /* Ajusta la altura según tus necesidades */
+    overflow: auto;
+    white-space: nowrap;
+}

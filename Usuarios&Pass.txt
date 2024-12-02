@@ -1,0 +1,13 @@
+Usuarios y Contraseñas
+
+Admin
+Usuario: test123
+Pass: test123
+
+Usuario:
+Usuario: test2
+Pass: test123
+
+Superadmin:
+Usuario: test3
+Pass: test123
