@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-12-2024 a las 22:11:48
+-- Tiempo de generación: 03-12-2024 a las 19:21:17
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -91,8 +91,8 @@ CREATE TABLE `categorias_x_perfume` (
 --
 
 INSERT INTO `categorias_x_perfume` (`id`, `perfume_id`, `categoria_id`) VALUES
-(45, 54, 1),
-(46, 54, 2);
+(49, 54, 1),
+(50, 54, 2);
 
 -- --------------------------------------------------------
 
@@ -315,7 +315,18 @@ INSERT INTO `perfumes` (`id`, `nombre`, `categoria_principal_id`, `familia_id`, 
 (51, 'Colonia Ana y Elsa Frozen', 4, 5, 19, 18, '2013-01-01', 'España', 'Proveedor4', 'DISNEY Colonia Ana y Elsa Frozen, colonia infantil con la fresca dulzura de estos adorables personajes.', 'DisneyColoniaAnayElsaFrozen.webp', 4.94),
 (52, 'Paris', 2, 5, 1, 1, '1983-01-01', 'Francia', 'Proveedor2', 'Paris de Yves Saint Laurent es una fragancia de la familia olfativa Floral para Mujeres. Paris se lanzó en 1983. La Nariz detrás de esta fragrancia es Sophia Grojsman. Las Notas de Salida son rosa, mimosa, jacinto, geranio, notas verdes, capuchina, flor de azahar del naranjo, flor del espino, casia y bergamota; las Notas de Corazón son rosa, violeta, azucena, flor de azahar del limero, ylang-ylang, lirio de los valles (muguete), jazmín y raíz de lirio; las Notas de Fondo son iris, almizcle, heliotropo, sándalo, musgo de roble, ámbar y cedro.', '1.webp', 52.20),
 (53, 'Acqua Di Gioia Eau de Parfu', 2, 5, 21, 12, '2010-01-01', 'Estados Unidos', 'Proveedor1', 'Acqua Di Gioia de Giorgio Armani es un \r\nperfume de mujer\r\n que evoca la esencia de la alegría. Inspirado en los espíritus femeninos más hedonistas, esta fragancia supone un himno alegre compuesto por tres tiempos y representados por diferentes acordes: vegetación, agua y tierra. ¿El resultado? Un Eau de Parfum EDP fresco, minimalista, espontáneo y radiante que cautiva los sentidos y que deja huella allá donde va. ', '2.webp', 33.39),
-(54, 'Test', 1, 1, 3, 13, '2018-02-01', 'Francia', '1', 'test', '1733173038.webp', 56.00);
+(54, 'Test', 1, 1, 3, 13, '2018-02-01', 'Francia', '1', 'test3', '1733173038.webp', 56.00);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `perfume_categoria_secundaria`
+--
+
+CREATE TABLE `perfume_categoria_secundaria` (
+  `perfume_id` int(10) UNSIGNED NOT NULL,
+  `categoria_id` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -409,6 +420,13 @@ ALTER TABLE `perfumes`
   ADD KEY `artista_id` (`marca_id`);
 
 --
+-- Indices de la tabla `perfume_categoria_secundaria`
+--
+ALTER TABLE `perfume_categoria_secundaria`
+  ADD PRIMARY KEY (`perfume_id`,`categoria_id`),
+  ADD KEY `categoria_id` (`categoria_id`);
+
+--
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
@@ -434,7 +452,7 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de la tabla `categorias_x_perfume`
 --
 ALTER TABLE `categorias_x_perfume`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT de la tabla `compras`
@@ -510,6 +528,13 @@ ALTER TABLE `perfumes`
   ADD CONSTRAINT `perfumes_ibfk_2` FOREIGN KEY (`disenador_id`) REFERENCES `disenadores` (`id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `perfumes_ibfk_3` FOREIGN KEY (`marca_id`) REFERENCES `marcas` (`id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `perfumes_ibfk_4` FOREIGN KEY (`familia_id`) REFERENCES `familias` (`id`) ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `perfume_categoria_secundaria`
+--
+ALTER TABLE `perfume_categoria_secundaria`
+  ADD CONSTRAINT `perfume_categoria_secundaria_ibfk_1` FOREIGN KEY (`perfume_id`) REFERENCES `perfumes` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `perfume_categoria_secundaria_ibfk_2` FOREIGN KEY (`categoria_id`) REFERENCES `categorias` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
