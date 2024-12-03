@@ -8,20 +8,23 @@ $familias = (new Familia())->lista_completa();
         <h1 class="text-center mb-5 fw-bold">Administración de Familias</h1>
         <div class="row mb-5 d-flex align-items-center">
 
+            <div>
+                <?= (new Alerta())->get_alertas(); ?>
+            </div>
 
             <table class="table">
                 <thead>
                     <tr>
-                        
-                        <th scope="col">Nombre</th>                 
+
+                        <th scope="col">Nombre</th>
                         <th scope="col">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?PHP foreach ($familias as $F) { ?>
                         <tr>
-                            
-                            <th scope="row"><?= $F->getNombre() ?></th>                            
+
+                            <th scope="row"><?= $F->getNombre() ?></th>
                             <td>
                                 <a href="index.php?sec=edit_familia&id=<?= $F->getId() ?>" role="button" class=" btn btn-sm bg-success text-white y  btn-auto">Editar</a>
                                 <a href="index.php?sec=delete_familia&id=<?= $F->getId() ?>" role="button" class=" btn btn-sm bg-warning btn-auto">Eliminar</a>

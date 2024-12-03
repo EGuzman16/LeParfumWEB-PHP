@@ -391,7 +391,10 @@ public function delete()
         return $this->familia->getNombre();
     }
 
-
+    public function getFamiliaCompleta(): ?Familia
+    {
+        return $this->familia;
+    }
 
     /**
      * Get the value of nombre
@@ -417,6 +420,11 @@ public function delete()
         return $this->disenador->getNombre_completo();
     }
 
+    public function getDisenadorCompleto(): ?Disenador
+    {
+        return $this->disenador;
+    }
+
     /**
      * Get the value of marca
      */
@@ -424,6 +432,11 @@ public function delete()
     {
         return $this->marca->getNombre_completo();
         
+    }
+
+    public function getMarcaCompleta(): ?Marca
+    {
+        return $this->marca;
     }
 
     /**

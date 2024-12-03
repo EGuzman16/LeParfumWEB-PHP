@@ -8,6 +8,9 @@ $marcas = (new Marca())->lista_completa();
         <h1 class="text-center mb-5 fw-bold">Administración de Marcas</h1>
         <div class="row mb-5 d-flex align-items-center">
 
+            <div>
+                <?= (new Alerta())->get_alertas(); ?>
+            </div>
 
             <table class="table">
                 <thead>

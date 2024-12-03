@@ -3,19 +3,23 @@ $perfumes = (new Perfume())->catalogo_completo();
 
 ?>
 <style>
-        .descripcion-fija {
-            max-width: 200px;  
-            max-height: 200px; 
-            overflow: auto;
-            white-space: nowrap;
-        }
-    </style>
+    .descripcion-fija {
+        max-width: 200px;
+        max-height: 200px;
+        overflow: auto;
+        white-space: nowrap;
+    }
+</style>
 
 <div class="row my-5">
     <div class="col">
 
         <h1 class="text-center mb-5 fw-bold">Administración de Productos</h1>
         <div class="row mb-5 d-flex align-items-center">
+
+            <div>
+                <?= (new Alerta())->get_alertas(); ?>
+            </div>
 
             <table class="table">
                 <thead>
@@ -37,7 +41,9 @@ $perfumes = (new Perfume())->catalogo_completo();
                             <td><img src="../img/perfumes/<?= $P->getImagen() ?>" alt="Perfume: <?= $P->getNombre() ?>" class="img-fluid rounded shadow-sm"></td>
                             <td><?= $P->getNombre() ?></td>
                             <td><?= $P->getMarca() ?></td>
-                            <td><div class="descripcion-fija"><?= $P->getDescripcion() ?></div></td>
+                            <td>
+                                <div class="descripcion-fija"><?= $P->getDescripcion() ?></div>
+                            </td>
                             <td><?= $P->getFamilia() ?></td>
                             <td><?= $P->getDisenador() ?></td>
                             <td><?= $P->getMarca() ?></td>

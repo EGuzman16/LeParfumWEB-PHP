@@ -7,6 +7,7 @@ $familias = (new Familia())->lista_completa();
 $categorias = (new Categoria())->lista_completa();
 $disenadores = (new Disenador())->lista_completa();
 $marcas = (new Marca())->lista_completa();
+
 ?>
 
 <div class="row my-5">
@@ -20,16 +21,17 @@ $marcas = (new Marca())->lista_completa();
                 </div>
 
                 <div class="col-md-6 mb-3">
-                    <label for="familia_id" class="form-label">Familia</label>
-                    <select class="form-select" name="familia_id" id="familia_id" required>
-                        <option value="" selected disabled>Elija una opción</option>
-                        <?php foreach ($familias as $F) { ?>
-                            <option value="<?= $F->getId() ?>" <?= $perfume->getFamilia() instanceof Familia && $F->getId() == $perfume->getFamilia()->getId() ? "selected" : "" ?>>
-                                <?= $F->getNombre() ?>
-                            </option>
-                        <?php } ?>
-                    </select>
-                </div>
+    <label for="familia_id" class="form-label">Familia</label>
+    <select class="form-select" name="familia_id" id="familia_id" required>
+        <option value="" selected disabled>Elija una opción</option>
+        <?php foreach ($familias as $F) { ?>
+            <option value="<?= $F->getId() ?>" <?= $perfume->getFamiliaCompleta() instanceof Familia && $F->getId() == $perfume->getFamiliaCompleta()->getId() ? "selected" : "" ?>>
+                <?= $F->getNombre() ?>
+            </option>
+        <?php } ?>
+    </select>
+</div>
+
 
                 <div class="col-md-4 mb-3">
                     <label for="categoria_principal_id" class="form-label">Categoria Principal</label>
@@ -60,28 +62,28 @@ $marcas = (new Marca())->lista_completa();
                 </div>
 
                 <div class="col-md-6 mb-3">
-                    <label for="disenador_id" class="form-label">Diseñador</label>
-                    <select class="form-select" name="disenador_id" id="disenador_id" required>
-                        <option value="" selected disabled>Elija una opción</option>
-                        <?php foreach ($disenadores as $D) { ?>
-                            <option value="<?= $D->getId() ?>" <?= $perfume->getDisenador() instanceof Disenador && $D->getId() == $perfume->getDisenador()->getId() ? "selected" : "" ?>>
-                                <?= $D->getNombre_completo() ?>
-                            </option>
-                        <?php } ?>
-                    </select>
-                </div>
+    <label for="disenador_id" class="form-label">Diseñador</label>
+    <select class="form-select" name="disenador_id" id="disenador_id" required>
+        <option value="" selected disabled>Elija una opción</option>
+        <?php foreach ($disenadores as $D) { ?>
+            <option value="<?= $D->getId() ?>" <?= $perfume->getDisenadorCompleto() instanceof Disenador && $D->getId() == $perfume->getDisenadorCompleto()->getId() ? "selected" : "" ?>>
+                <?= $D->getNombre_completo() ?>
+            </option>
+        <?php } ?>
+    </select>
+</div>
 
-                <div class="col-md-6 mb-3">
-                    <label for="marca_id" class="form-label">Marca</label>
-                    <select class="form-select" name="marca_id" id="marca_id" required>
-                        <option value="" selected disabled>Elija una opción</option>
-                        <?php foreach ($marcas as $M) { ?>
-                            <option value="<?= $M->getId() ?>" <?= $perfume->getMarca() instanceof Marca && $M->getId() == $perfume->getMarca()->getId() ? "selected" : "" ?>>
-                                <?= $M->getNombre_completo() ?>
-                            </option>
-                        <?php } ?>
-                    </select>
-                </div>
+<div class="col-md-6 mb-3">
+    <label for="marca_id" class="form-label">Marca</label>
+    <select class="form-select" name="marca_id" id="marca_id" required>
+        <option value="" selected disabled>Elija una opción</option>
+        <?php foreach ($marcas as $M) { ?>
+            <option value="<?= $M->getId() ?>" <?= $perfume->getMarcaCompleta() instanceof Marca && $M->getId() == $perfume->getMarcaCompleta()->getId() ? "selected" : "" ?>>
+                <?= $M->getNombre_completo() ?>
+            </option>
+        <?php } ?>
+    </select>
+</div>
 
                 <div class="col-md-4 mb-3">
                     <label for="pais" class="form-label">Pais</label>
@@ -109,7 +111,7 @@ $marcas = (new Marca())->lista_completa();
                     <?php foreach ($categorias as $C) { ?>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input" type="checkbox" name="categorias_secundarias[]" id="categorias_secundarias_<?= $C->getId() ?>" value="<?= $C->getId() ?>" <?= in_array($C->getId(), $ct_selected) ? "checked" : "" ?>>
-                            <label class="form-check-label mb-2" for="categorias_secundarios_<?= $C->getId() ?>"><?= $C->getNombre() ?></label>
+                            <label class="form-check-label mb-2" for="categorias_secundarias_<?= $C->getId() ?>"><?= $C->getNombre() ?></label>
                         </div>
                     <?php } ?>
                 </div>
